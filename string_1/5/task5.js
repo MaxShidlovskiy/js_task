@@ -1,7 +1,14 @@
-const a = +prompt("Введите число");
-const b = +prompt("Введите число");
-if (a % b===1) {
-    console.log('делится c остаткom', a/b);
-}else {
-    console.log('делится без остатка', a/b);
+const value = prompt('Enter the value: ');
+
+if (isNaN(value)) {
+  console.log('Error');
+} else {
+  console.log(value.length);
+  value = Number(value);
+
+  if (value > 0) {
+    console.log(`Number ${value} is positive`);
+  } else {
+    console.log(`Number ${value} is negative`);
+  }
 }

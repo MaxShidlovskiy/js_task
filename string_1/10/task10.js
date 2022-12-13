@@ -1,4 +1,9 @@
-const a = +prompt("введите ребро");
+const value = prompt("введите число");
 
-console.log(a**3);
-console.log(6*a**3);
+if (isNaN(value)) {
+    console.log(`error`);
+} else if (Number(value) === 0) {
+    console.log(`the reverse number does not`);
+} else {
+    console.log(`Reverse number:${1/value}`);
+}

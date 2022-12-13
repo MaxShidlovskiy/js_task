@@ -1,6 +1,10 @@
-const num1 = +(prompt("Введите первое число"));
-const num2 = +(prompt("Введите второе число"));
+let n = +prompt("Введите число");
 
-console.log  ((2*(num1 - num2)-4*(num1 - num2))/2);
+if (isNaN(n)) {
+    console.log(`Ошибка ввода`);
+} else {
+    n = +n;
+    let a = Math.sqrt(n);
 
-
+    console.log(Number.isInteger ? a : Math.floor(a));
+}

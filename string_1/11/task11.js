@@ -1,6 +1,7 @@
-var a = +(prompt("Введите длинну ребра"));
-var b = +(prompt("Введите длинну ребра"));
-
-
-console.log (a+b, a-a, a*b);
-
+let a = prompt("Введите число");
+if (isNaN(a)) {
+    console.log(`error`);
+} else {
+    a = +a;
+    console.log(`${Math.floor(a/100)}`);
+}
