@@ -1,14 +1,13 @@
+// Напишите программу, в которой рассчитывается сумма и произведение цифр
+// положительного трёхзначного числа
+// 123 -> Сумма цифр = 6 Произведение цифр = 6
 let a = prompt("Введите число");
-
+let z = +a[0];
+let x = +a[1];
+let c = +a[2];
 if (isNaN(a)) {
     console.log(`error`);
 } else {
-    a = +a;
-    let num1 = a % 10;
-    let num2 = Math.floor(num1 / 10);
-    let num3 = num2 % 10;
-    let num4 = Math.floor(num3 / 10);
-    let x = num2 + num3 + num4;
-    let y = num2 * num3 * num4;
-    console.log(`сумма чисел${num2 + num3 + num4} произведение чисел${y}`);
+    console.log(z + x + c);
+    console.log(z * x * c);
 }

@@ -7,8 +7,8 @@ const a = +prompt('Введите первое число');
 const b = +prompt('Введите второе число');
 const c = +prompt('Введите третье число');
 const dis = (b ** 2) - (4 * a * b);
-const x1 = (-b - (Dis ** 0.5)) / (2 * a)
-const x2 = (-b + (Dis ** 0.5)) / (2 * a)
+const x1 = (-b - (dis ** 0.5)) / (2 * a)
+const x2 = (-b + (dis ** 0.5)) / (2 * a)
 if (dis < 0) {
     console.log("корней нет");
 } else if (b === 0) {
