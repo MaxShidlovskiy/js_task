@@ -1,17 +1,8 @@
+// Пользователь вводит строку. Необходимо повторить ее трижды
 let value = prompt("Введите строку");
 
-if (isNaN(a)) {
-    switch (value) {
-        case 1:
-            console.log(`${value} -> Понедельник`)
-            break;
-        case 2:
-            console.log(`${value} -> Вторник`)
-            break;
-        case 3:
-            console.log(`${value} -> Среда`)
-            break;
-        default:
-            break;
-    }
-} else console.log(`error`);
+if (isNaN(value)) {
+    console.log(value.repeat(3));
+} else {
+    console.log(`error`);
+}    
