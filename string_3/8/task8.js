@@ -1,10 +1,6 @@
-// На вход подается 1 слово. Необходимо преобразовать слово в хештег. Добавить
-// проверку на ввод текстовых значений
-// hSСhOol -> #hschool
-let str = `hSChOol`;
+// Дана строка 'aaa bbb ccc'. Вырежите из нее слово 'bbb'
 
-if (isNaN(str)) {
-    console.log(`#` + str.toLowerCase().trim());
-}else{
-    console.log(`error`);
-}
+const str = prompt(`Enter`);
+
+console.log(str.slice(4,7));
+console.log(str.slice(str.indexOf("b"), str.lastIndexOf("b")+1));
