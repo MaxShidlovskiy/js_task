@@ -6,5 +6,5 @@ const value = 123;
 if (value > 2 && value < 11 || value == 26 && str < 30) {
     console.log(`true`);
 } else {
-    `false`
+    console.log(`false`);
 }

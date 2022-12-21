@@ -6,7 +6,7 @@
 const string = `Swap Case`;
 let finalString = "";
 for (let i = 0; i < string.length; i++) {
-    if (string[i] === string[i].toUpperCase()) {
+    if (string[i] === string[i].toUpperCase) {
         finalString += string[i].toLowerCase();
     } else {
         finalString += string[i].toUpperCase();
