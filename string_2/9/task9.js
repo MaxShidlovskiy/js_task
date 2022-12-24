@@ -1,22 +1,7 @@
-const m = prompt(`введите месяц`);
-if (isNaN(m)) {
-    console.log(`error`);
-} else {
-    switch (m) {
-        case '1':
-            console.log(`зима`);
-            break;
-        case '2':
-            console.log(`весна`);
-            break;
-        case '3':
-            console.log(`лето`);
-            break;
-        case '4':
-            console.log(`осень`);
-            break;
-        default:
-            console.log(`ошибка ввода`);
-            break;
-    }
+// На вход программе подается переменная date, в котрой лежит дата в формате
+// 'xxxx-xx-xx'. Преобразуйте эту дату в формат 'xx/xx/xxxx’. (reverse)
+const ste = prompt('Введите число');
+
+if (isNaN(ste)) {
+    console.log(str.split('-').reverse().join('/'))
 }

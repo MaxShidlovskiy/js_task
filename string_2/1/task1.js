@@ -1,12 +1,14 @@
-// Найти максимальное число из 2 введенных (2 способа)
-const a = +prompt("Введите число");
+// Ввести строку. Если эта равна “hschool”, вывести true. В противном случае false.
+// Добавить проверки для строк. Удалить лишние пробелы
 
-if (isNaN(a)){
-    console.log(a);
-}else{
-    console.log(`error`);
+const str = prompt('Введите строку');
+
+if (isNaN) {
+  if (str.includes('hschool')) {
+    console.log(true);
+  } else {
+    console.log(false);
+  }
+} else {
+  console.log('Error');
 }
-a>b ? console.log(a): console.log(b);
-console.log(a>b ? a: b)
-
-console.log(Math.max(a,b));

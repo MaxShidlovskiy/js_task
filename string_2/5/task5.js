@@ -1,14 +1,3 @@
-const value = prompt('Enter the value: ');
-
-if (isNaN(value)) {
-  console.log('Error');
-} else {
-  console.log(value.length);
-  value = Number(value);
-
-  if (value > 0) {
-    console.log(`Number ${value} is positive`);
-  } else {
-    console.log(`Number ${value} is negative`);
-  }
-}
+// ‘HTML JavaScript PHP’ преобразовать в "HTML-JAVASCRIPT-PHP"
+const str = 'HTML JavaScript PHP';
+console.log(str.trim().toUpperCase().split(' ').join('-'));

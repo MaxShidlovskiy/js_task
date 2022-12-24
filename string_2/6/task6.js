@@ -1,10 +1,10 @@
-let n = +prompt("Введите число");
+// Ввести строку. Проверить является ли это число или строка. Если число, то
+// ошибка ввода. Если это строка то первый символ поставить в верхний регистр.
+// Убрать лишние пробелы
+let str = prompt("Введите string").trim();
 
-if (isNaN(n)) {
-    console.log(`Ошибка ввода`);
+if (isNaN(str)) {
+    console.log(str[0].toUpperCase() + str.slice(1));
 } else {
-    n = +n;
-    let a = Math.sqrt(n);
-
-    console.log(Number.isInteger ? a : Math.floor(a));
+    console.log(`Ошибка ввода`);
 }
