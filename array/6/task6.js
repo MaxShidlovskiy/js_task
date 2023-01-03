@@ -4,3 +4,7 @@ let str = `asd@mail.ru`;
 if (str.includes(`.ru`) || (`.com`) && str.includes(`@`));
 console.log(`true`);
 console.log(`false`);
+let str = `asd@mail.ru`;
+if (str.includes(`.ru`) || (`.com`) && str.includes(`@`));
+console.log(`true`);
+console.log(`false`);

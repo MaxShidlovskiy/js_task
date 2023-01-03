@@ -9,5 +9,5 @@ const value = prompt('Введите строку');
 if (isNaN(value)) {
   console.log(value.toLowerCase().split('').join('-'));
 } else {
-  console.log('Error');
+  console.error('это не строка');
 }

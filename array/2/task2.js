@@ -6,7 +6,7 @@
 
 const value = 5;
 let arr = [];
-let res[];
+let res = [];
 let x = prompt('Enter value');
 let y = prompt('Enter value');
 
