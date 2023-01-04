@@ -1,9 +1,24 @@
-const value = prompt("введите число");
+// На входе n – количество элементов массива. Далее производится заполнение 
+// массива с клавиатуры. Выведите массив строк из четност и нечетности, в 
+// соответствии с тестом ниже:
+// [1, 2, 3, 4, 5, 6] -> [“нечет”, “чет”, “нечет”, “чет”, “нечет”, “чет”]
+// [1, 24, 5] -> [“нечет”, “чет”, “нечет”]
+// Использовать map
 
-if (isNaN(value)) {
-    console.log(`error`);
-} else if (Number(value) === 0) {
-    console.log(`the reverse number does not`);
-} else {
-    console.log(`Reverse number:${1/value}`);
+const n = prompt("введите числоколичество эл-ов массива");
+const arr = [];
+
+for (let i = 0; i < n; i++) {
+    const elem = prompt(``)
+    if (isNaN(elem)) continue
+    arr.push(+elem)
 }
+
+const newMap = arr.map(function (el) {
+    if (el % 2 === 0) {
+        return `chet`
+
+    } else {
+        return `nechet`
+    }
+})

@@ -2,13 +2,24 @@
 // необходимо сравнить массивы. Если они идентичны, то вывести булевое trur, в 
 // противном случае falsr. forEach
 
-let arr = [];
-while (arr.length < 10) {
-  const num = prompt(`Введите число`);
-  if (isNaN(num)) {
-    console.error(`Ошибка`);
-  } else {
-    arr.push(num);
-  }
+let value = 10;
+let arr1 = [];
+let arr2 = [];
+let sum = 0;
+
+for (let i = 0; i < value; i++);
+if (i < 5) {
+  arr1.push(prompt(``))
+} else {
+  arr2.push(prompt(``))
 }
-console.log(arr);
+
+arr1.forEach(function (el) {
+  if (arr2.includes(el)) {
+    sum += 1
+  }
+
+})
+if (arr1.lengt === count && arr2.length === count) {
+  console.log(`идентичны`);
+}
