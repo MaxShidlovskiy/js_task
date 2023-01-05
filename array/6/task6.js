@@ -1,10 +1,12 @@
-// На вход подается строка в виде электронной почты. Если строка содержит “@” и
-// оканчивается на .com, .ru, то вывести true, иначе false
-let str = `asd@mail.ru`;
-if (str.includes(`.ru`) || (`.com`) && str.includes(`@`));
-console.log(`true`);
-console.log(`false`);
-let str = `asd@mail.ru`;
-if (str.includes(`.ru`) || (`.com`) && str.includes(`@`));
-console.log(`true`);
-console.log(`false`);
+// На входе n – количество элементов массива. Далее производится заполнение
+// массива с клавиатуры. Необходимо вывести true, если хотя бы 1 элемент массива –
+// число. Some, forEach
+const n = prompt('Введите количество эл-тов массива');
+let arr = [];
+
+arr.forEach(function (arr) {
+    let elem = prompt();
+})
+// arr.some(function (arr) {
+//     return true;
+// })
