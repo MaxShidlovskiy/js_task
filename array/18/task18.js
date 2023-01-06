@@ -1,17 +1,19 @@
-let value = prompt("Введите строку");
+// На входе n – количество элементов массива. Далее производится заполнение
+// массива с клавиатуры. Необходимосоздать новый массив, где каждый элемент
+// возведен в квадрат. map
 
-if (isNaN(a)) {
-    switch (value) {
-        case 1:
-            console.log(`${value} -> Понедельник`)
-            break;
-        case 2:
-            console.log(`${value} -> Вторник`)
-            break;
-        case 3:
-            console.log(`${value} -> Среда`)
-            break;
-        default:
-            break;
+let n = +prompt(`Введите количество эл-ов`);
+let arr = [];
+
+for (let i = 0; i < n; i++) {
+    const num = prompt(`введите строку`);
+    if (num > 0) {
+
+        arr.push(num);
     }
-} else console.log(`error`);
+}
+const result = arr.map(function (el) {
+    return el ** 2
+});
+
+console.log(result)
