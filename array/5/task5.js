@@ -20,6 +20,6 @@ arr1.forEach(function (el) {
   }
 
 })
-if (arr1.lengt === count && arr2.length === count) {
+if (arr1.length === count && arr2.length === count) {
   console.log(`идентичны`);
 }
