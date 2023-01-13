@@ -1,25 +1,12 @@
-// На входе n – количество элементов массива. Далее производится заполнение
-// массива с клавиатуры. Значения могут быть строкового либо числового типа
-// данных. Необходимо из этих элементов составить 2 массива: со строками и второй
-// массив, соответственно, с числами. forEach
-
-let n = +prompt(`Введите количество эл-ов`);
-let arr = 0;
-let arr1 = [];
-let arr2 = [];
-
-for (let i = 0; i < n; i++) {
-    const num = prompt(`введите строку`);
-    if (num > 0) {
-        arr.push(num);
-    }
-}
-
-arr.forEach(elem => {
-    if (isNaN(elem)) {
-        arr1.push(elem);
-    } else {
-        arr2.push(elem);
-    }
-});
-console.log(arr1, arr2);
+[
+    { "id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1 },
+    { "id": "typescript", "label": "TypeScript", "category": "programmingLanguages", "priority": 1 },
+    { "id": "sql", "label": "SQL", "category": "programmingLanguages", "priority": 2 },
+    { "id": "java", "label": "Java", "category": "programmingLanguages", "priority": 3 },
+    { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 }
+    ]
+    // Массив объектов прошлого слайда – воображаемая база данных (БД) 
+    // На входе объект – воображаемое тело запроса от пользователя
+    // Работа по CRUD: Create, Read, Update, Delete
+    // Использовать методы перебора массива
+    // Возможно применение spread оператора
