@@ -1,12 +1,29 @@
-// На входе массив. Необходимо создать функцию проверки на то что в массиве 
-// только числа. Функция возвращает true, если в массиве только числа и false в 
-// противном случае
+// Напишите функцию, которая принимает массив чисел и находит минимальное и
+// максимальное числа соответственно. Добавить проверки на ввод и если значения
+// массива не соответствуют условию задания, вывести сообщение об ошибке. 
 
-const arr = [1, `fdf`, 2, `rwerwe`, 3, 4, 5, 6, 7, 8, 9, 10];
+const arr = [0, -5, 21, 50, 6, -45];
 
-const find = (numbers) => {
-    const result = numbers.filter(elem => !isNaN(elem));
-    return result;
-}
+const validation = (array) => {
+    let counter = 0;
+    array.forEach((element) => isNaN(element) ? counter++ : null);
+    return counter > 0 ? false : true;
 
-console.log(find(arr))
+};
+
+const doArray = (array) => {
+    const result = validation(array);
+    if (result === true) {
+        let max = array[0];
+        let min = array[0];
+        array.forEach((element) => {
+            element > max ? max = element : null;
+            element < min ? min = element : null;
+        });
+        return `min: ${min} and max: ${max}`;
+
+    } else {
+        return false;
+    }
+};
+console.log(doArray(arr));
