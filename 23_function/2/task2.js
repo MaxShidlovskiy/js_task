@@ -2,7 +2,8 @@
 // массива с клавиатуры. Напишите функцию, которая принимает массив строк и
 // находим там наибольшее по длине текстовое значение. Добавить проверки
 
-const l = prompt(`rare`);
+
+let n = prompt(`количество элементов массива`);
 
 function doArray(size) {
     let arr = [];
@@ -13,8 +14,9 @@ function doArray(size) {
     return arr
 }
 
-function check(array) {
+function mainCheck(array) {
     let the_longest = 0;
+    console.log(array);
     array.forEach(element => {
         if (element.length > the_longest) {
             the_longest = element.length;
@@ -22,6 +24,6 @@ function check(array) {
     });
     return the_longest;
 }
-let arr = doArray(l);
+let arr = doArray(n);
 let rez = check(arr);
 console.log(rez);
