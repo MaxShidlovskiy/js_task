@@ -6,7 +6,11 @@ const arr = ['qwe', 'asd', 'zxc'];
 
 const find = (str) => {
     const result = str.filter(elem => isNaN(elem));
-    return true;
-    
+
+    if (result.length > 0) {
+        return false
+    } else {
+        return true;
+    }
 }
-console.log();
+console.log(result);
