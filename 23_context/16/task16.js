@@ -1,5 +1,13 @@
-let a = prompt("Введите число");
+// *Вычислить факториал числа используя рекурсию 
 
-if (isNaN(a)) {
-    console.log(`error`);
-} else console.log(a.indexOf(1));
+let count = 5;
+
+function doFactorial(count_) {
+    if (count_ === 1) {
+        return count_
+    }
+    return count_ * doFactorial(count_ - 1);
+}
+let result = doFactorial(count);
+
+console.log(result);

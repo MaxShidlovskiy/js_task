@@ -1,27 +1,15 @@
-// На входе n – количество элементов массива. Далее производится заполнение 
-// массива с клавиатуры. Необходимо создать новый массив из отфильтрованных 
-// значений, где строка начинается на [a, h]. Проверка на ввод только текстовых 
-// значений на заполнение массива. filter
-// [“ann”, “school”, “hschool”, “borabora”] -> [“ann”, “hschool”]
+// Работа с замыканием. Напишите функцию, каждый вызов который будет
+// генерировать случайные числа от 1 до 100, но так, чтобы они не повторялись, пока
+// не будут перебраны все числа из этого промежутка.
 
-let a = prompt(`count of elem`);
-let arr = [];
-
-for (let i = 0; i < a; i++) {
-    let elem = prompt(`enter the element`);
-
-    if (!isNaN(elem)) {
-        arr.push(elem);
-
+function wrapper() {
+    return function () {
+        let rnd = Math.random() * 100;
+        console.log(Math.floor(rnd));
     }
 }
-// let filtrered = arr.filter(function (el) {
-//     if (el[0] == `a` || el[0 == `h`]) {
-//         return true;
-//     }
+let wrap = wrapper();
 
-// })
-let filtered = arr.filter(function (el) {
-    return el[0] == `a` || el[0 == `h`];
-}) 
-console.log(filtered);
+wrap();
+wrap();
+wrap();

@@ -1,21 +1,14 @@
-// На входе n – количество элементов массива. Далее производится заполнение 
-// массива с клавиатуры. Необходимо создать новый массив из элементов, каждое 
-// значение которого имеет вид #name
-// [“hschool”, “company”] -> [“#hschool”, “#company”]
+// Напишите функцию, генерирующую надежный пароль. (Math.random)
 
-let n = +prompt(`Введите количество эл-ов`);
-let arr1 = [];
-// let arr2 = [];
+function generatePwd() {
+    let arr = [];
+    while (arr.length != 8) {
+        let rnd = Math.random() * 10;
+        arr.push(Math.floor(rnd));
 
-for (let i = 0; i < n; i++) {
-    const num = prompt(`введите строку`);
-    arr1.push(num);
+    }
+    return arr;
 }
-// arr1.forEach(function (el) {
-//     arr2.push(`#` + el);
-// })
-// console.log(arr2);
-let m = arr.map(function (elem) {
-    return `#` + elem;
-})
-console.log(m);
+let pwd = generatePwd();
+
+console.log(pwd.join(``));

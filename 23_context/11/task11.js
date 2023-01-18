@@ -1,16 +1,33 @@
-// На входе пустой объект. С клавиатуры вводятся 2 числа. Необходимо добавить в 
-// объект ключ “avg” со значением среднего арифметического введенных с чисел
+// Напишите функцию, принимающую в качестве параметра статичный объект.
+// Функция возвращает новый объект, где значения – исключительно числа
+// первоначального объекта. IIFE
 
 let obj = {
-    name: ``,
-    age: ``,
-    birthday: ``,
+    value_1: 34,
+    value_2: `abc`,
+    value_3: 53,
+    value_4: `dfg`,
 };
 
-for (let key in obj) {
-    const data = prompt(`enter value`).trim();
-    if (data.length > 0) {
-        obj[key] = data;
-    }
-}
-console.log(obj);
+// function generateNewObject(obj_) {
+//     let objWithNumbers = {};
+//     for (let key in obj_) {
+//         if (typeof obj[key] === `number`) {
+//             objWithNumbers[key] = obj_[key]
+//         }
+//     }
+//     return objWithNumbers;
+// }
+
+
+const newObject = (function (obj_) {
+    function generateNewObject(obj_) {
+        let objWithNumbers = {};
+        for (let key in obj_) {
+            if (typeof obj[key] === `number`) {
+                objWithNumbers[key] = obj_[key]
+            }
+        }
+        return objWithNumbers;
+    }(obj_)
+})

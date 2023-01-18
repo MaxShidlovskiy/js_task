@@ -1,30 +1,29 @@
-// На входе n – количество элементов массива. Далее производится заполнение массива arr
-//  с клавиатуры. Также в памяти есть статичная переменная со значением javascript. 
-//  Необходимо создать новый массив из отфильтрованных значений, где строка массива 
-//  arr включают значение переменной javascript. 
+// Напишите функцию, принимающую в качестве параметра статичный объект.
+// Функция возвращает количество пар ключ / значение. IIFE
 
-
-let n = prompt(`Введите количество эл-ов`);
-const value = `javascript`
-let arr1 = [];
-// let arr2 = [];
-for (let i = 0; i < n; i++) {
-    const num = prompt(`введите строку`);
-    arr1.push(num);
+let obj = {
+    value_1: 34,
+    value_2: `abc`,
+    value_3: 53,
+    value_4: `dfg`,
 }
-// arr1.forEach(function (elem) {
-//     if (elem.includes(value)) {
-//         arr2.push(elem)
+
+// function doCount(object) {
+//     let count = 0;
+//     for (let el in object) {
+//         count++
 //     }
+//     return count;
+// }
+// let temp = doCount(obj);
+// console.log(temp);
 
-// })
-let result = arr1.filter(function (elem) {
-    if (elem.includes(value)) {
-        return true;
-    } else {
-        return false
+let temp = (function (object) {
+    let count = 0;
+    for (let el in object) {
+        count++
     }
-})
+    return count;
+}(obj))
 
-console.log(result);
-// console.log(arr2);
+console.log(temp);
