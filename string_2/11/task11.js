@@ -1,7 +1,7 @@
-let a = prompt("Введите число");
-if (isNaN(a)) {
-    console.log(`error`);
-} else {
-    a = +a;
-    console.log(`${Math.floor(a/100)}`);
+// Пользователь вводит дату в формате ‘х-х-х'. Замените все дефисы на '!'
+
+const ste = prompt('Введите дату');
+
+if (isNaN(ste)) {
+    console.log(ste.split('-').reverse().join('!'))
 }
