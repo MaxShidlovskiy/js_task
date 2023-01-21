@@ -13,3 +13,6 @@ for (let i = 0; i < string.length; i++) {
     }
 }
 console.log(finalString);
+console.log(finalString);
+console.log(finalString);
+console.log(finalString);
