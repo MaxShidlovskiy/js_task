@@ -1,5 +1,8 @@
-let a = prompt("Введите число");
+// Дан массив ['я', 'учу', 'javascript', '!']. С помощью метода join преобразуйте массив в
+// строку 'я+учу+javascript+!'.
 
-if (isNaN(a)) {
-    console.log(`error`);
-} else {
+let arr = ['я', 'учу', 'javascript', '!'];
+
+
+
+    console.log(arr.join('+'));
