@@ -1,29 +1,14 @@
-// Напишите функцию, которая принимает массив чисел и находит минимальное и
-// максимальное числа соответственно. Добавить проверки на ввод и если значения
-// массива не соответствуют условию задания, вывести сообщение об ошибке. 
+// Пользователь вводит n – порядковый номер числа из ряда Фибоначчи.
+// Реализуйте функцию на поиск числа n в данной последовательности используя
+// рекурсию
+// 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, …
+// 5 -> 3
+// 10 -> 34
+// 7 -> 8
 
-const arr = [0, -5, 21, 50, 6, -45];
-
-const validation = (array) => {
-    let counter = 0;
-    array.forEach((element) => isNaN(element) ? counter++ : null);
-    return counter > 0 ? false : true;
-
-};
-
-const doArray = (array) => {
-    const result = validation(array);
-    if (result === true) {
-        let max = array[0];
-        let min = array[0];
-        array.forEach((element) => {
-            element > max ? max = element : null;
-            element < min ? min = element : null;
-        });
-        return `min: ${min} and max: ${max}`;
-
-    } else {
-        return false;
-    }
-};
-console.log(doArray(arr));
+function fib(el) {
+    if(el===0) return
+    return el + fib()
+}
+let result = fib(5);
+console.log(result);
