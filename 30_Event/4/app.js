@@ -1,15 +1,18 @@
-// На вход подается строка в виде электронной почты пользователя. Необходимо
-// написать регулярное выражение для данной строки. Если же строка подходит под
-// регулярное выражение, то вывести булевое true, в противном случае бросить
-// исключение и обработать
+// Необходимо отобразить кнопку с надписью «Нажми на меня» и пустой инпут. 
+// По клику на кнопку вызвать alert и отобразить сообщение из значения инпута. 
+// Проверки на ввод. Обработать ошибки
 
 const btn = document.querySelector(`button`);
-addEventListener(`click`, function(){
+btn.addEventListener(`click`, function () {
     try {
         const inp = document.querySelector(`input`);
-        if(inp.value.trim == ``) throw new Error (`пустое поле`);
+        if (inp.value.trim() == ``) throw new Error(`пустое поле`);
+        inp.style = ` border:1px solid black`;
         alert(inp.value);
+        inp.value = ``;
     } catch (error) {
-        alert (error.message)
+        let inp = document.querySelector(`input`);
+        inp.style = `border:1px solid red`;
+        alert(error.message)
     }
 })
