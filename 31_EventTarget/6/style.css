@@ -1,0 +1,7 @@
+.img {
+	background-image: url(./HS1.png);
+	height: 500px;
+	width: 500px;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
