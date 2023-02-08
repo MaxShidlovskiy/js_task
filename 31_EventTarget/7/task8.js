@@ -29,3 +29,23 @@ function validNum(num_) {
 }
 let result = validNum(num);
 console.log(result);
+function vaidator(num_) {
+    if (isNaN(num_)) throw new Error(`это не число`);
+}
+
+function validNum(num_) {
+    try {
+        vaidator(num_);
+        let sqrt = Math.sqrt(num_);
+        if (Number.isInteger(sqrt)) {
+            return true
+        } else {
+            return false
+        }
+
+    } catch (error) {
+        return error.message
+    }
+}
+let result = validNum(num);
+console.log(result);

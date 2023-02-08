@@ -1,13 +1,15 @@
-// По наведению на кнопку вывести сообщение «Hi». 
-// Когда мышка выходит за границы кнопки сновка скрывать
-
+// По двойному клику на кнопку изменить цвет кнопки
 
 const btn = document.querySelector(`.btn`);
-btn.addEventListener(`mouseover`, function () {
-    let p = document.querySelector(`p`);
-    p.innerHTML = `Hi`
-})
-btn.addEventListener(`mouseout`, function () {
-    let p = document.querySelector(`p`);
-    p.innerHTML = ``
+let flag = false;
+btn.addEventListener(`dblclick`, function () {
+
+    if (flag == false) {
+
+        this.style = `background-color:red`;
+        flag == true;
+    } else {
+        this.style = `background-color:white`;
+        flag == true;
+    }
 })

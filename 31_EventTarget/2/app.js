@@ -1,9 +1,12 @@
-// Необходимо отобразить кнопку с надписью «Нажми на меня» и инпут со 
-//  по-умолчанию «+375(хх)ххх-хх-хх». По клику на кнопку заменить значение 
-//  инпута на «+375(29)111-11-11»
+// По наведению на кнопку вывести сообщение «Hi». 
+// Когда мышка выходит за границы кнопки сновка скрывать
 
-const btn = document.querySelector(`.btn`);
-btn.addEventListener(`click`, function(){
-    let inp = document.querySelector(`input`);
-    inp.value = `+375(29)111-11-11`
+let btn = document.querySelector(`.btn`);
+btn.addEventListener(`mouseover`, function(event) {
+    const div = document.querySelector(`div`);
+    div.innerHTML = `Hi`;
+})
+btn.addEventListener(`mouseout`, function () {
+    let div = document.querySelector(`div`)
+    div.innerHTML = ``;
 })

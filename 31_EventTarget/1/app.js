@@ -5,7 +5,12 @@
 const ul = document.querySelector(`ul`);
 
 ul.addEventListener(`click`, function (event) {
-   console.log(event.target.textContent);
-   const divs = document.querySelector(`.show`);
-   divs.innerHTML = event.target.textContent
+   try {
+      if (event.target.textContent == ``) throw new Error(`empty`)
+      const divs = document.querySelector(`.show`);
+      divs.innerHTML = event.target.textContent
+   } catch (error) {
+      alert(error.message)
+   }
+
 });
