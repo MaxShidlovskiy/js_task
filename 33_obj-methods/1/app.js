@@ -3,8 +3,9 @@
 
 const obj = {
    name_: `string`,
+   test: `gnirts`,
 }
 
-const str = `sdr`;
+const str = `test`;
 
 console.log(obj.hasOwnProperty(str));
