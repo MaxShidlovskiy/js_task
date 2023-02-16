@@ -20,7 +20,8 @@ btn.addEventListener(`click`, function () {
       avg.innerHTML = sum / arr.length;
       input.value = ``;
    } catch (error) {
-      alert(error.message)
+      alert(error.message);
+      input.value =``;
    }
 
 });
