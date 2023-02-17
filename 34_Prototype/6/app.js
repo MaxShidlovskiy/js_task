@@ -1,27 +1,21 @@
-// На входе объект и число n, символизирующее количество пар ключ-значение.
-// Ключи - автоинкремент (генерируется автоматически от 1 до n). Значение каждого
-// ключа – рандомное число от 1 до 100. Вывести каждое значение объекта с
-// помощью values
+// На входе объект. Ключи и значения - автоинкремент (генерируется автоматически
+// от 1 до n). Необходимо отобразить на экране объект (помните, что окно браузера
+// не воспринимает объекты как тип данных JavaScript. Для отображения неоходимо
+// преобразовать строку в ...)
 
-const n = 15;
+const n = Math.round(Math.random() * 10);
 
-function doObject(n_) {
+function fillObj(n_) {
     const obj = {};
     for (let i = 0; i < n_; i++) {
-        obj[i] = Math.floor(Math.random() * 100);
+        obj[i] = i;
     }
     return obj
 }
 
-function doValues(obj_) {
-    let value = Object.values(obj_);
-    const arr = [];
-    for (let i = 0; i < value.length; i++) {
-        arr.push(value[i])
-    }
-    return arr;
+function addToHtml(obj_){
+const result =document.querySelector(`.result`);
+result.innerHTML = obj_;
 }
-
-let object = doObject(n);
-let resVal = doValues(object);
-console.log(resVal);
+let object = fillObj(n)
+addToHtml(object)
