@@ -1,6 +1,6 @@
-// По условию задачи даны инпут и кнопка. Пользователь вводит в инпут значения и
-// по нажатию на кнопку формирует массив. Необходимо вывести среднее значение
-// этого массива
+// Реализуйте класс Singer, который будет иметь следующие свойства: name,
+// surname. Также класс должен иметь метод getАutograph, который будет выводить
+// “{name} {surname), с наилучшими пожеланиями”. 
 
 //1
 // class Singer {
@@ -8,18 +8,19 @@
 
 //       return (`${name} ${surname}, with best wishes`);
 //    }
-   // let singer = new Singer();
-   // console.log(singer.getAutograph(`Robert`, `Smith`));
+// let singer = new Singer();
+// console.log(singer.getAutograph(`Robert`, `Smith`));
 
-   //2
-   class Singer {
-      constructor(name, surname) {
-         this.name;
-         this.surname = surname;
-      }
-      getAutograph() {
-         return (`${this.name} ${this.surname}, best wishes`)
-      }
+//2
+class Singer {
+   constructor(name, surname) {
+      this.name= name;
+      this.surname = surname;
    }
-   let singer = new Singer(`Robert`, `Smith`)
-   console.log(singer.getAutograph());
+   getAutograph() {
+      return (`${this.name} ${this.surname}, best wishes`)
+   }
+}
+let singer = new Singer(`Robert`, `Smith`)
+console.log(singer.getAutograph());
+

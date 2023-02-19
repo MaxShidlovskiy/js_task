@@ -8,21 +8,46 @@ class Calculator {
         this.num2 = num2;
     }
     sum() {
-        return `${this.num1}+ ${this.num2}=${this.num1}+${this.num2}`;
+        try {
+            this.isValid()
+            return `${this.num1} + ${this.num2} = ${this.num1 + this.num2}`;
+        } catch (error) {
+            return error.message
+        }
     }
     subtraction() {
-        return `${this.num1} - ${this.num2}= ${this.num1 -this.num2}`;
+        try {
+            this.isValid()
+            return `${this.num1} - ${this.num2} = ${this.num1 - this.num2}`;
+        } catch (error) {
+            return error.message;
+        }
+
     }
     multiplication() {
-        return `${this.num1} * ${this.num2}= ${this.num1 *this.num2}`;
+        try {
+            this.isValid()
+            return `${this.num1} * ${this.num2} = ${this.num1 * this.num2}`;
+        } catch (error) {
+            return error.message;
+        }
+
     }
 
     division() {
-        return `${this.num1} / ${this.num2}= ${this.num1 /this.num2}`;
-    }
+        try {
+            this.isValid()
+            return `${this.num1} / ${this.num2} = ${this.num1 / this.num2}`;
+        } catch (error) {
+            return error.message;
+        }
 
+    }
+    isValid() {
+        if (isNaN(this.num1) || isNaN(this.num2)) throw new Error(`its string`)
+    }
 }
-let calculator = new Calculator(2, 10);
+let calculator = new Calculator(2, 5);
 console.log(calculator.sum());
 console.log(calculator.subtraction());
 console.log(calculator.multiplication());

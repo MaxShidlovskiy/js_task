@@ -7,21 +7,42 @@ class WordString {
     constructor(string) {
         this.string = string;
     }
+
+    isValid() {
+        if (!isNaN(this.string)) throw new Error(`its not a string`);
+    }
     reverseString() {
-        return `${this.string.split(``).reverse().join(``)}`;
+        try {
+            this.isValid();
+            return `${this.string.split(``).reverse().join(``)}`;
+        } catch (error) {
+            return error.message;
+        }
     }
     upperFirst() {
-        return `${this.string[0].toUpperCase()+this.string.slice(1)}`;
+        try {
+            this.isValid();
+            return `${this.string[0].toUpperCase()+this.string.slice(1)}`;
+        } catch (error) {
+            return error.message;
+        }
     }
     upperEvery() {
-        const array = this.string.split(` `);
-        const arrStr = array.map(function (el) {
-            return el[0].toUpperCase() + el.slice(1);
-        })
-        return arrStr.join(` `);
+        try {
+            this.isValid();
+            const array = this.string.split(` `);
+            const arrStr = array.map(function (el) {
+                return el[0].toUpperCase() + el.slice(1);
+            })
+            return arrStr.join(` `);
+        } catch (error) {
+            return error.message
+        }
     }
 }
-let wordString = new WordString(`test test test test`);
+
+
+let wordString = new WordString(`one two three four`);
 console.log(wordString.reverseString());
 console.log(wordString.upperFirst());
 console.log(wordString.upperEvery());
