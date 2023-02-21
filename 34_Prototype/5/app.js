@@ -1,25 +1,22 @@
-// На входе объект и число n, символизирующее количество пар ключ-значение.
-// Ключи и значения - автоинкремент (генерируется автоматически от 1 до n).
-// Проверить есть ли ключ 10 в объекте. 
+// По условию задачи даны 2 инпута и кнопка. Необходимо вернуть true, если часть
+// символов 1 строки есть в другой.
+// 'rkqodlw', 'world‘ – true
+// 'kacvtas', 'steak' – false
 
 
-const n = 15;
+const btn = document.querySelector(`button`);
 
-function doObject(n_) {
-    const obj = {};
-    for (let i = 0; i < n_; i++) {
-        obj[i] = i;
+btn.addEventListener(`click`, function () {
+    const inp1 = document.querySelector(`.inp1`).value
+    const inp2 = document.querySelector(`.inp2`).value
+
+    let count = 0
+    for (let i = 0; i < inp2.length; i++) {
+        if (inp1.includes(inp2[i])) {
+            count++
+        }
     }
-    return obj
-}
-
-function doSearch(obj_) {
-    let arrKey = Object.keys(obj_);
-    return arrKey.includes(`10`);
-}
-
-
-let object = doObject(n);
-let search = doSearch(object)
-console.log(object);
-console.log(search);
+    if (count === inp2.length) {
+        alert(true)
+    } else(false)
+})
