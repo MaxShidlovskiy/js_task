@@ -12,8 +12,13 @@
 
 class ServerGetAll {
     controller() {
-        const data = this.service()
-        return data
+        try {
+            const data = this.service()
+            return data
+        } catch (error) {
+            return error.message
+        }
+
     }
     service() {
         const data = this.repository()

@@ -19,57 +19,67 @@
 // Если совпадение есть – ошибка. Добавить проверки 
 
 class ServerPost {
-    middleware() {}
-        controller(object) {
-try {
-    
-} catch (let ) {
-    
-}
-        }
-    }
     controller(object) {
         try {
-            this.service(object);
+            const data = this.servise(object);
+            return data
         } catch (error) {
-            return error.message;
+            return error.message
         }
     }
+
+
     service(object) {
-        this.repository(object);
+        const data = this.repository(object);
+        return data
+    }
+
+    repository(object) {
+        const arr = [{
+                "id": "javascript",
+                "label": "JavaScript",
+                "category": "programmingLanguages",
+                "priority": 1
+            },
+            {
+                "id": "typescript",
+                "label": "TypeScript",
+                "category": "programmingLanguages",
+                "priority": 1
+            },
+            {
+                "id": "sql",
+                "label": "SQL",
+                "category": "programmingLanguages",
+                "priority": 2
+            },
+            {
+                "id": "java",
+                "label": "Java",
+                "category": "programmingLanguages",
+                "priority": 3
+            },
+            {
+                "id": "go",
+                "label": "GO",
+                "category": "programmingLanguages",
+                "priority": 3
+            }
+        ]
+        const filtered = arr.filter((elem) => elem.label === object.label)
+        if (filtered.length > 0) throw new Error(`Такой лэйбл уже есть`)
+        arr.push({
+            id: object.label.toLowercase(),
+            ...object
+        })
+        return arr
     }
 }
-repository(object) {
-    let arr = [{
-            "id": "javascript",
-            "label": "JavaScript",
-            "category": "programmingLanguages",
-            "priority": 1
-        },
-        {
-            "id": "typescript",
-            "label": "TypeScript",
-            "category": "programmingLanguages",
-            "priority": 1
-        },
-        {
-            "id": "sql",
-            "label": "SQL",
-            "category": "programmingLanguages",
-            "priority": 2
-        },
-        {
-            "id": "java",
-            "label": "Java",
-            "category": "programmingLanguages",
-            "priority": 3
-        },
-        {
-            "id": "go",
-            "label": "GO",
-            "category": "programmingLanguages",
-            "priority": 3
-        }
-    ]
+const object = {
+    "label": "test",
+    "category": "programmingLanguages",
+    "priority": 1
 }
-repository
+const serverPost = new ServerPost()
+const result = serverPost.controller(object)
+console.log(result);

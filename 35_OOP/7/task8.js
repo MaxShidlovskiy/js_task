@@ -1,111 +1,37 @@
-// Реализуйте функцию, принимающую число. Ваша задача – выяснить является ли
-// число идеальным квадратом. В математике квадратное число или идеальный
-// квадрат – это целое число, являющееся квадратом целого числа; другими
-// словами, это произведение некоторого целого числа на самого себя. Если
-// является, вывести true, в противном случае false. Добавить проверки
-// 3 –> false
-// 25 –> true
-// 49 –> true
+// Реализуйте класс ServerById. Обязательными функциями считаются функции
+// middleware, controller, service, repository. Цепочка взаимодействия между
+// методами следующая:
+// middleware -> controller -> service -> repository, где:
+// middleware – функция валидатор
+// controller – функция, принимающая данные. Принимает json
+// service – функция проверки на то что с repository вернулось значение
+// repository – функция, симулирующая БД. Хранит массив данных. Взаимодействие с
+// этим массивом осуществляется только в repository. Массив находится в
+// приложении
+// Задание:
+// на вход подается JSON вида:
+// `{
+// "id": "javascript"
+// }`
+// Необходимо вывести в консоль найденный элемент массива по id если таковой
+// имеется. В противном случае бросить исключение. Добавить проверки
 
-let num = +prompt(`введите число`);
+class ServerById {
+    middleware() {
 
-function vaidator(num_) {
-    if (isNaN(num_)) throw new Error(`это не число`);
-}
-
-function validNum(num_) {
-    try {
-        vaidator(num_);
-        let sqrt = Math.sqrt(num_);
-        if (Number.isInteger(sqrt)) {
-            return true
-        } else {
-            return false
+    }
+    controller(object) {
+        try {
+            const data = this.service();
+            return data;
+        } catch (error) {
+            return error.message
         }
+    }
+    service(object) {
 
-    } catch (error) {
-        return error.message
+    }
+    repository(object) {
+
     }
 }
-let result = validNum(num);
-console.log(result);
-function vaidator(num_) {
-    if (isNaN(num_)) throw new Error(`это не число`);
-}
-
-function validNum(num_) {
-    try {
-        vaidator(num_);
-        let sqrt = Math.sqrt(num_);
-        if (Number.isInteger(sqrt)) {
-            return true
-        } else {
-            return false
-        }
-
-    } catch (error) {
-        return error.message
-    }
-}
-let result = validNum(num);
-console.log(result);
-function vaidator(num_) {
-    if (isNaN(num_)) throw new Error(`это не число`);
-}
-
-function validNum(num_) {
-    try {
-        vaidator(num_);
-        let sqrt = Math.sqrt(num_);
-        if (Number.isInteger(sqrt)) {
-            return true
-        } else {
-            return false
-        }
-
-    } catch (error) {
-        return error.message
-    }
-}
-let result = validNum(num);
-console.log(result);
-function vaidator(num_) {
-    if (isNaN(num_)) throw new Error(`это не число`);
-}
-
-function validNum(num_) {
-    try {
-        vaidator(num_);
-        let sqrt = Math.sqrt(num_);
-        if (Number.isInteger(sqrt)) {
-            return true
-        } else {
-            return false
-        }
-
-    } catch (error) {
-        return error.message
-    }
-}
-let result = validNum(num);
-console.log(result);
-function vaidator(num_) {
-    if (isNaN(num_)) throw new Error(`это не число`);
-}
-
-function validNum(num_) {
-    try {
-        vaidator(num_);
-        let sqrt = Math.sqrt(num_);
-        if (Number.isInteger(sqrt)) {
-            return true
-        } else {
-            return false
-        }
-
-    } catch (error) {
-        return error.message
-    }
-}
-let result = validNum(num);
-console.log(result);
