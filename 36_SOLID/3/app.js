@@ -1,48 +1,35 @@
-// Реализуйте класс WordString, который будет иметь следующие методы: метод
-// reverseString, переворачивающий строку, метод upperFirst, возвращающий строку,
-// где первая буква заглавная и метод upperEvery, который делает заглавной первую
-// букву каждого слова этой строки.
+// Реализуйте класс ServerGetAll. Обязательными функциями считаются функции
+// controller, service, repository. Цепочка взаимодействия между методами
+// следующая:
+// controller -> service -> repository, где:
+// controller – функция, принимающая данные. Принимает json
+// service – функция проверки на то что с repository вернулось значение
+// repository – функция, симулирующая БД. Хранит массив данных. Взаимодействие с
+// этим массивом осуществляется только в repository. Массив находится в
+// приложении
+// Задание:
+// Необходимо вывести в консоль весь массив
 
-class WordString {
-    constructor(string) {
-        this.string = string;
-    }
+class ServerGetAll {
+    constructor() {
+        try {
+            const data = this.service();
+            return data
+        } catch (error) {
 
-    isValid() {
-        if (!isNaN(this.string)) throw new Error(`its not a string`);
-    }
-    reverseString() {
-        try {
-            this.isValid();
-            return `${this.string.split(``).reverse().join(``)}`;
-        } catch (error) {
-            return error.message;
         }
+
     }
-    upperFirst() {
-        try {
-            this.isValid();
-            return `${this.string[0].toUpperCase()+this.string.slice(1)}`;
-        } catch (error) {
-            return error.message;
-        }
+    service() {
+
     }
-    upperEvery() {
-        try {
-            this.isValid();
-            const array = this.string.split(` `);
-            const arrStr = array.map(function (el) {
-                return el[0].toUpperCase() + el.slice(1);
-            })
-            return arrStr.join(` `);
-        } catch (error) {
-            return error.message
-        }
+    repository(){
+         const array = [
+            { "id": 1, "name": "Yesenia", "age": 22 },
+            { "id": 2, "name": "Hanna", "age": 22 },
+            { "id": 3, "name": "Stanislau", "age": 25 },
+            { "id": 4, "name": "German", "age": 18 },
+            { "id": 5, "name": "Maria", "age": 27 }
+        ]
     }
 }
-
-
-let wordString = new WordString(`one two three four`);
-console.log(wordString.reverseString());
-console.log(wordString.upperFirst());
-console.log(wordString.upperEvery());

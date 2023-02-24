@@ -1,54 +1,26 @@
-// Реализуйте класс Calculator, который будет хранить в себе 4 метода: сумма чисел,
-// разность, произведение, частное. 2 числа передаются в класс, далее вызываеются
-// соответствующие функции. Добавить проверки на ввод
+Реализуйте класс DomHtml, который будет взаимодействовать с DOM по клику на
+кнопку.Класс содержит 1 метод валидации, называемый middleware, в котором
+происходит проверка на почту.Вывести true, если провека успешна
 
-class Calculator {
-    constructor(num1, num2) {
-        this.num1 = num1;
-        this.num2 = num2;
-    }
-    sum() {
-        try {
-            this.isValid()
-            return `${this.num1} + ${this.num2} = ${this.num1 + this.num2}`;
-        } catch (error) {
-            return error.message
-        }
-    }
-    subtraction() {
-        try {
-            this.isValid()
-            return `${this.num1} - ${this.num2} = ${this.num1 - this.num2}`;
-        } catch (error) {
-            return error.message;
-        }
+// Реализуйте класс DomHtml, который будет взаимодействовать с DOM по клику на
+// кнопку. Класс содержит 1 метод валидации, называемый middleware, в котором
+// происходит проверка на почту. Вывести true, если провека успешна
 
+class DomHtml {
+    constructor() {
+        this.middleware();
     }
-    multiplication() {
-        try {
-            this.isValid()
-            return `${this.num1} * ${this.num2} = ${this.num1 * this.num2}`;
-        } catch (error) {
-            return error.message;
-        }
-
-    }
-
-    division() {
-        try {
-            this.isValid()
-            return `${this.num1} / ${this.num2} = ${this.num1 / this.num2}`;
-        } catch (error) {
-            return error.message;
-        }
-
-    }
-    isValid() {
-        if (isNaN(this.num1) || isNaN(this.num2)) throw new Error(`its string`)
+    middleware() {
+        const btn = document.querySelector(`button`);
+        btn.addEventListener(`click`, function () {
+            try {
+                const inp = document.querySelector(`input`);
+                if (!/^[a-z0-9\.\_\-]+@[a-z]+\.[a-z]{2,3}$/gm.test(inp.value)) throw new Error(`email is not valid`)
+                alert(true)
+            } catch (error) {
+                alert(error.message)
+            }
+        })
     }
 }
-let calculator = new Calculator(2, 5);
-console.log(calculator.sum());
-console.log(calculator.subtraction());
-console.log(calculator.multiplication());
-console.log(calculator.division());
+let domHtml = new DomHtml();
