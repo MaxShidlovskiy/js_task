@@ -1,25 +1,62 @@
-// На входе объект и число n, символизирующее количество пар ключ-значение.
-// Ключи и значения - автоинкремент (генерируется автоматически от 1 до n).
-// Проверить есть ли ключ 10 в объекте. 
+// 
 
-
-const n = 15;
-
-function doObject(n_) {
-    const obj = {};
-    for (let i = 0; i < n_; i++) {
-        obj[i] = i;
+class ServerPost {
+    middleware(object) {
+        if (!isNaN(object.name)) throw new Error(`its  a number`);
+        if (isNaN(object.age)) throw new Error(` its string`)
     }
-    return obj
+    controller(object) {
+        try {
+            this.middleware(object)
+            const data = this.service(object);
+            return data;
+        } catch (error) {
+            alert(error.message);
+        }
+    }
+    service(object) {
+        const data = this.repository(object);
+        return data;
+    }
+    repository(object) {
+        const array = [{
+                "id": 1,
+                "name": "Yesenia",
+                "age": 22
+            },
+            {
+                "id": 2,
+                "name": "Hanna",
+                "age": 22
+            },
+            {
+                "id": 3,
+                "name": "Stanislau",
+                "age": 25
+            },
+            {
+                "id": 4,
+                "name": "German",
+                "age": 18
+            },
+            {
+                "id": 5,
+                "name": "Maria",
+                "age": 27
+            }
+        ]
+        const filtered = array.filter((elem) => elem.name !== object.name);
+        if (array.length !== filtered.length) throw new Error(`Такой id уже есть`);
+        array.push({
+            ...object.name
+        });
+        return array;
+    }
 }
-
-function doSearch(obj_) {
-    let arrKey = Object.keys(obj_);
-    return arrKey.includes(`10`);
-}
-
-
-let object = doObject(n);
-let search = doSearch(object)
-console.log(object);
-console.log(search);
+const object = JSON.parse(`{
+    
+    "name ":"test", "age ": 1
+}`);
+const serverPort = new ServerPost();
+const result = serverPort.controller(object);
+console.log(result);
