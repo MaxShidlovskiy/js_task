@@ -17,49 +17,63 @@
 // Если совпадения по id нет – ошибка. Добавить проверки 
 
 class ServerPut {
-    middleWare() {
-
+    middleWare(object) {
+        if (isNaN(object.name)) throw new Error(`its number`)
+        if (isNaN(object.age)) throw new Error(`its string`)
+        if (isNaN(object.id)) throw new Error(`its string`)
     }
-    controller(json) {
+    controller(object) {
         try {
-            let object = JSON.parse(json);
-            let service = this.service(object);
+            this.middleWare(object);
+            const data = this.service(object);
+            return data;
         } catch (error) {
             return error.message
         }
     }
     service(object) {
-        let repository = this.repository(object);
+
+        const data = this.repository(object);
+        return data;
     }
     repository(object) {
-        let arr = [{
-                id: 1,
-                name: `Yesenia` ,
-                age: 22
-            }, {
-                id: 2,
-                name: `Hanna` , 
-                age: 22
-            }, {
-                id : 3,
-                name: `Stanislau`,
-                age: 25
+        const array = [{
+                "id": 1,
+                "name": "Yesenia",
+                "age": 22
             },
             {
-                id: 4,
-                name: `German`,
-                age: 18
+                "id": 2,
+                "name": "Hanna",
+                "age": 22
             },
             {
-                id: 5,
-                name: `Maria`,
-                age: 27
+                "id": 3,
+                "name": "Stanislau",
+                "age": 25
+            },
+            {
+                "id": 4,
+                "name": "German",
+                "age": 18
+            },
+            {
+                "id": 5,
+                "name": "Maria",
+                "age": 27
             }
         ]
-        let filter = arr.filter(elOfArr => elOfArr.id !== object.id ? true : false);
+
+        let filter = array.filter(elOfArr => elOfArr.id !== object.id ? true : false);
         if (filter.length == arr.length) {
             throw new Error(`error id not found`);
         } else {
 
         }
     }
+}
+const object = JSON.parse(`{
+    "id": 1,
+    "name": "test",
+    "age": 1
+}`);

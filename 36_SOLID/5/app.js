@@ -48,7 +48,8 @@ class ServerPost {
         const filtered = array.filter((elem) => elem.name !== object.name);
         if (array.length !== filtered.length) throw new Error(`Такой id уже есть`);
         array.push({
-            ...object.name
+            id: Math.cell(Math.random() * 100),
+            ...object
         });
         return array;
     }
