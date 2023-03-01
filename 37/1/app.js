@@ -20,33 +20,50 @@ class Employee {
    getName() {
       return this.name;
    }
-   getId {
+
+   getId() {
       return this.id;
    }
-   setName {
-      this.name;
+   setName(name) {
+      this.name = name;
+   }
+   setId(id) {
+      this.id = id;
    }
 }
-
-
 class ProductionWorker extends Employee {
    shiftNumber;
    perHour;
+
    getShiftNumber() {
       return this.shiftNumber;
    }
-   getPerHour {
+
+   getPerHour() {
       return this.perHour
+   }
+
+   setShiftNumber(shift) {
+      this.setShiftNumber = shift;
+   }
+
+   setPerHour(hour) {
+      this.perHour = hour;
    }
 }
 
-let productionWorker = new ProductionWorker();
+
 productionWorker.setName(`John`)
 productionWorker.setId(`29`)
 productionWorker.getShiftNumber(`1-я смена`)
 productionWorker.setPerHour(`2-я смена`);
 
-console.log(productionWorker);
-console.log(productionWorker);
-console.log(productionWorker);
-console.log(productionWorker);
+let name = new productionWorker.getName();
+let id = new productionWorker.getId();
+let shiftNumber = productionWorker.getShiftNumber();
+let perHour = productionWorker.getPerHour();
+
+console.log(name);
+console.log(id);
+console.log(shiftNumber);
+console.log(perHour);

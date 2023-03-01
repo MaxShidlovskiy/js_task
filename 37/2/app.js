@@ -31,6 +31,7 @@ class Customer extends Person {
     costomerId;
     bool;
 }
+getCustomer
 
 customer.setName(`John`);
 customer.setAddress(`Mins`);
