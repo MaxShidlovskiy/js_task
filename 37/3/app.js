@@ -8,7 +8,7 @@ class Worker {
     name;
     surname;
     getFullName() {
-        return this.name + ` ` + this.surname;
+        return `${this.name}${this.surname}`;
     }
     setName(name) {
         this.name = name;
@@ -23,7 +23,7 @@ class Singer extends Worker {
     birthday;
     style;
     getMoreInfo() {
-        return this.name + ` ` + this.surname + ` ` + this.years + ` ` + this.birthday + ` ` + this.style;
+        return `${this.name} ${this.surname} ${this.years} ${this.birthday} ${this.style}`;
     }
     setYears(years) {
         this.years = years;
