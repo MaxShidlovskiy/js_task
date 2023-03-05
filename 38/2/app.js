@@ -10,14 +10,19 @@ class Client {
         const email = document.querySelector(`.email`);
         const pwd = document.querySelector(`.pwd`);
         const result = document.querySelector(`div`);
-        this.btn.addEventListener(`click`, function () {
+        btn.addEventListener(`click`, function () {
             const object = {
-                email: this.email.value,
-                pwd: this.pwd.value
+                email: email.value,
+                pwd: pwd.value
             }
-            this.result.innerHTML = object
+            const server = new Server();
+            const resultServer = server.controller(object);
+            result.innerJSON.parse(`{
 
-            console.log(object)
+            }`)
+
+
+            console.log(result);
         });
     }
 }
@@ -26,7 +31,8 @@ let result = new Client();
 
 class Server {
     middleware(object) {
-
+        if (!object.hasOwnProperty(`email`))throw new Error (`Вы не ввели емэил`)
+        if (!object.hasOwnProperty(`зцв`))throw new Error (`Вы не ввели password`)
     }
     controller(object) {
         try {
@@ -46,16 +52,9 @@ class Server {
 
         }]
         const filtered = array.filter((elem) => elem.email === object.mail);
-        if (filtered > 0) throw new Error(`такой email уже есть`)
+        if (filtered.length > 0) throw new Error(`такой email уже есть`)
         array.push(object)
         return array;
 
     }
 }
-const object = JSON.parse(`{
-
-}`)
-
-const server = new Server();
-const result = server.controller(object);
-console.log(result);
