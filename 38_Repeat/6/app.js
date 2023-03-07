@@ -4,23 +4,36 @@
 // [“hschool”, “company”] -> [“#hschool”, “#company”]
 
 function createArr() {
-
-  const l = prompt(`length of arr...`);
-  const arr = [];
-  for (let i = 0; i < l; i++) {
+  const n = prompt(`length of arr`);
+  let arr = [];
+  for (let i = 0; i < n; i++) {
     const element = +prompt(`put the element`);
-    arr.push(element);
+    arr.push(element)
   }
   return arr;
 }
 
 function doHashTag(array) {
-  const newArr = [];
-  for (let i = 0; i < array.length; i++) {
-    const element = `#` + array[i];
-    newArr.push(element);
+  try {
+    isValid(array);
+    let newArr = [];
+    for (let i = 0; i < array.length; i++) {
+      const element = `#` + array[i];
+      newArr.push(element)
+    }
+    return newArr
+  } catch (error) {
+    return(error.message)
   }
-  return newArr;
 }
-let temp = createArr();
-console.log(doHashTag(temp));
+
+
+function isValid(array) {
+  array.forEach(element => {
+    if (!isNaN(element)) throw new Error(`Это число`)
+  });
+}
+
+let temp = createArr()
+let t = doHashTag(temp);
+console.log(t);
