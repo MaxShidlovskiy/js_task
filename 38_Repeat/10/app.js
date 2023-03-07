@@ -3,15 +3,18 @@
 
 const inp = document.querySelector(`input`);
 const btn = document.querySelector(`button`);
-const result = document.querySelector(`div`)
+const result = document.querySelector(`div`);
 const arr = [];
 
-btn.addEventListener(`click`, function () {
+btn.addEventListener(`click`, () => {
   try {
-    if (!inp.value ) throw new Error(``);
-    if (isNaN(inp.value)) throw new Error(`это не число`);
-    result.innerHTML = inp.value * 2;
+    if (!inp.value) throw new Error(`input is empty`);
+    arr.push(inp.value);
+    result.innerHTML = arr;
+    inp.value = ``;
+    inp.style = `border: 1px solid black`;
   } catch (error) {
-    alert(error.message)
+    alert(error.message);
+    inp.style = `border: 1px solid red`
   }
 })

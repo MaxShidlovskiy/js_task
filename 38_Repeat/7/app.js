@@ -11,6 +11,7 @@ function check(obj) {
   try {
     let arr = Object.keys(obj);
     if (!arr.length) throw new Error(`empty object`)
+    return arr.length;
   } catch (error) {
     return error.message;
   }
