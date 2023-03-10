@@ -32,8 +32,6 @@ const isValid = (arr) => {
   });
 }
 
-
-
 const array = doArray(n);
 const newArr = filteredArray(array)
 console.log(newArr);
