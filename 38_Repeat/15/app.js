@@ -8,9 +8,16 @@ class WordString {
    }
 
    doReverse() {
-      return this.str.split(``).reverse().join(``);
+      try {
+         if (!isNaN(this.str)) throw new Error(`not a string`);
+         const newStr = this.str.split(``).reverse().join(``);
+         return newStr;
+      } catch (error) {
+         return error.message;
+      }
    }
 
 }
+
 const wordString = new WordString(`test`)
 console.log(wordString.doReverse());
