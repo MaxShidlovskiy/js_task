@@ -3,21 +3,21 @@
 
 class WordString {
 
-   constructor(str) {
-      this.str = str;
-   }
-
-   doReverse() {
-      try {
-         if (!isNaN(this.str)) throw new Error(`not a string`);
-         const newStr = this.str.split(``).reverse().join(``);
-         return newStr;
-      } catch (error) {
-         return error.message;
-      }
-   }
-
-}
-
-const wordString = new WordString(`test`)
-console.log(wordString.doReverse());
+    constructor(str) {
+       this.str = str;
+    }
+ 
+    doReverse() {
+       try {
+          if (!isNaN(this.str)) throw new Error(`not a string`);
+          const newStr = this.str.split(``).reverse().join(``);
+          return newStr;
+       } catch (error) {
+          return error.message;
+       }
+    }
+ 
+ }
+ 
+ const wordString = new WordString(`test`)
+ console.log(wordString.doReverse())
