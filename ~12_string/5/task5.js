@@ -2,7 +2,7 @@
 // числе цифр, а также положительное оно или отрицательное. Например, "Число " +
 // num + " положительное". (length)
 
-const value = prompt('Enter the value: ');
+const value = +prompt('Enter the value: ');
 
 if (isNaN(value)) {
   console.log('Error');
