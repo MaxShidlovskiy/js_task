@@ -5,15 +5,15 @@
 // • Добавить стили для отображения текста input: например, изменить цвет букв.
 // • Добавить проверки на получение значения input
 
-class Client {
+class HTML {
 
-   constructor() {
+   bindOption() {
+      const btn = document.querySelector(`button`);
 
       this.sendRequest()
    }
 
    sendRequest() {
-      const btn = document.querySelector(`button`);
       const email = document.querySelector(`.email`);
       const pwd = document.querySelector(`.pwd`);
       const result = document.querySelector(`div`);
