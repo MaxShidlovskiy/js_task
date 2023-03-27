@@ -9,15 +9,15 @@ class HTML {
 
    bindOption() {
       const btn = document.querySelector(`button`);
-
+      const inp = document.querySelector(`input`);
+      const pwd = document.querySelector(`.outPut`);
+      const result = document.querySelector(`div`);
+      this.btn.addEventListener(`click`, function () {
       this.sendRequest()
    }
 
    sendRequest() {
-      const email = document.querySelector(`.email`);
-      const pwd = document.querySelector(`.pwd`);
-      const result = document.querySelector(`div`);
-      this.btn.addEventListener(`click`, function () {
+      
          const object = {
             email: this.email.value,
             pwd: this.pwd.value
