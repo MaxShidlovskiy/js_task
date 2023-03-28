@@ -1,60 +1,16 @@
-class Client {
+// Реализуйте класс HTML. Класс содержит метод bindOption содержащий обработчик
+// события. HTML разметка содержит кнопку button с начальным значением 0. Задача:
+// • По клику на кнопку каждый раз добавлять +1 в текст кнопки. (Если первоначальный
+// текст кнопки – 0, то после пятого, например, клика значение input – 5)
 
-    constructor() {
-
-        this.sendRequest()
-    }
-
-    sendRequest() {
+class HTML {
+    bindOption() {
         const btn = document.querySelector(`button`);
-        const email = document.querySelector(`.email`);
-        const pwd = document.querySelector(`.pwd`);
-        const result = document.querySelector(`div`);
-        btn.addEventListener(`click`, function () {
-            const object = {
-                email: email.value,
-                pwd: pwd.value
-            }
-            const server = new Server();
-            const resultServer = server.controller(object);
-            result.innerJSON.parse(`{
-
-            }`)
-
-
-            console.log(result);
-        });
+        btn.addEventListener(`click`, () => {
+            btn.textContent = +btn.textContent + 1
+            btn.style =`background-color: red`
+        })
     }
 }
-
-let result = new Client();
-
-class Server {
-    middleware(object) {
-        if (!object.hasOwnProperty(`email`))throw new Error (`Вы не ввели емэил`)
-        if (!object.hasOwnProperty(`зцв`))throw new Error (`Вы не ввели password`)
-    }
-    controller(object) {
-        try {
-            this.middleware();
-            const data = this.service();
-            return data;
-        } catch (error) {
-            return error.message
-        }
-    }
-    service(object) {
-        const data = this.repository();
-        return data;
-    }
-    repository(object) {
-        const array = [{
-
-        }]
-        const filtered = array.filter((elem) => elem.email === object.mail);
-        if (filtered.length > 0) throw new Error(`такой email уже есть`)
-        array.push(object)
-        return array;
-
-    }
-}
+const html = new HTML();
+html.bindOption();
