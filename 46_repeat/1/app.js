@@ -6,27 +6,15 @@
 // • Добавить проверки на получение значения input
 
 class HTML {
-
    bindOption() {
-      const btn = document.querySelector(`button`);
-      const inp = document.querySelector(`input`);
-      const pwd = document.querySelector(`.outPut`);
-      const result = document.querySelector(`div`);
-      this.btn.addEventListener(`click`, function () {
-      this.sendRequest()
-   }
-
-   sendRequest() {
-      
-         const object = {
-            email: this.email.value,
-            pwd: this.pwd.value
-         }
-         this.result.innerHTML = object
-
-         console.log(object)
-      });
-   }
-}
-
-let result = new Client();
+       
+       const buttonTag = document.querySelector("button");
+       const inputTag = document.querySelector("input");
+       const outPutTag = document.querySelector(".outPut");
+       buttonTag.addEventListener('click', () => {
+           try{
+               if(inputTag.value.trim() == ''){
+                   throw new Error('value is empty')
+               }
+               outPutTag.innerHTML = inputTag.value;
+               outPutTag.style = 'color:red';
