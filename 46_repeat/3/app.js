@@ -5,7 +5,7 @@
 //  который выводит информацию о певце: name, surname years, birth, style. 
 //  Необходимо вызвать метод getMoreInfo
 class HTML {
-    
+
     bindOptionPlus() {
         let displayTag = document.querySelector('.display');
         let btnPlusTag = document.querySelector(".plus");
@@ -22,3 +22,7 @@ class HTML {
         })
     }
 }
+
+let html = new HTML();
+html.bindOptionPlus();
+html.bindOptionMinus();
