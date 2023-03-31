@@ -7,14 +7,25 @@
 
 class HTML {
    bindOption() {
-       
-       const buttonTag = document.querySelector("button");
-       const inputTag = document.querySelector("input");
-       const outPutTag = document.querySelector(".outPut");
-       buttonTag.addEventListener('click', () => {
-           try{
-               if(inputTag.value.trim() == ''){
-                   throw new Error('value is empty')
-               }
-               outPutTag.innerHTML = inputTag.value;
-               outPutTag.style = 'color:red';
+
+      const buttonTag = document.querySelector("button");
+      const inputTag = document.querySelector("input");
+      const outPutTag = document.querySelector(".outPut");
+      buttonTag.addEventListener('click', () => {
+         try {
+            if (inputTag.value.trim() == '') {
+               throw new Error('value is empty')
+            }
+            outPutTag.innerHTML = inputTag.value;
+            outPutTag.style = 'color:red';
+         } catch (err) {
+            alert(err.message);
+         }
+
+
+      })
+   }
+}
+
+const html = new HTML();
+html.bindOption();
