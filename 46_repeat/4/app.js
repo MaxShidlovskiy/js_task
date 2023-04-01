@@ -20,3 +20,9 @@ class Client {
                 email: email.value,
                 pwd: password.value,
             }
+            console.log(object);
+        })
+    }
+}
+let client = new Client();
+client.doRegistration();
