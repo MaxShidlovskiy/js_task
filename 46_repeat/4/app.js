@@ -9,3 +9,14 @@
 // то в объект клиента добавить ключ id с последним возможным уникальным id БД, таким образом, 
 // чтобы в БД был запушен объект вида{"id": 6, "email": "yesenia@mail.ru", "pwd": "pwdffff" }
 // Если совпадение есть – ошибка. Добавить проверки 
+
+class Client {
+    doRegistration() {
+        const btn = document.querySelector('button');
+        const email = document.querySelector('.email');
+        const password = document.querySelector('.password');
+        btn.addEventListener('click', () => {
+            const object = {
+                email: email.value,
+                pwd: password.value,
+            }
