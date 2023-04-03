@@ -1,37 +1,29 @@
-// На входе n – количество элементов массива. Далее производится заполнение
-// массива с клавиатуры. Необходимо создать функцию возвращающую новый
-// массив из отфильтрованных значений, где строка начинается на [a, h].
-// [“ann”, “school”, “hschool”, “borabora”] -> [“ann”, “hschool”]
+// 5. Реализуйте класс Server, получающий объект из предыдущего задания и
+// сохраняющий его в «БД» (массив). Обязательными функциями считаются функции
+// middleware, controller, service, repository. Цепочка взаимодействия между
+// методами следующая:
+// middleware -> controller -> service -> repository, где:
+// middleware – функция валидатор
+// controller – функция, принимающая данные. Принимает json
+// service – функция проверки на то что с repository вернулось значение
+// repository – функция, симулирующая БД. Хранит массив данных. Взаимодействие с
+// этим массивом осуществляется только в repository. Массив находится в
+// приложении
+class Client {
+  doRegistration() {
+      const btn = document.querySelector('button');
+      const email = document.querySelector('.email');
+      const password = document.querySelector('.password');
+      btn.addEventListener('click', () => {
+          const object = {
+              email: email.value,
+              pwd: password.value,
+          }
 
-const n = prompt(`enter the length`);
+          let server = new Server();
+          const result = server.controller(object);
+          console.log(result);
 
-const doArray = (length) => {
-  const arr = [];
-  for (let i = 0; i < length; i++) {
-    arr.push(prompt(`enter the value`));
+      })
   }
-  return arr;
 }
-
-const filteredArray = (arr) => {
-  try {
-    isValid(arr);
-
-    const newArr = arr.filter((elem) => elem[0] === `a` || elem[0] === `h` ? true : false)
-
-    return newArr
-  } catch (error) {
-    return error.message;
-  }
-}
-const isValid = (arr) => {
-  arr.forEach(element => {
-    if (!isNaN(element)) {
-      throw new Error(`not a string`)
-    }
-  });
-}
-
-const array = doArray(n);
-const newArr = filteredArray(array)
-console.log(newArr);
