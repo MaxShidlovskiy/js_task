@@ -11,10 +11,13 @@
 // приложении
 class Client {
   doRegistration() {
+
       const btn = document.querySelector('button');
       const email = document.querySelector('.email');
       const password = document.querySelector('.password');
+
       btn.addEventListener('click', () => {
+        
           const object = {
               email: email.value,
               pwd: password.value,
