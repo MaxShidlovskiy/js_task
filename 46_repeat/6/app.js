@@ -9,6 +9,30 @@
 
 class Client {
   doRegistration() {
-      const btn = document.querySelector('button');
-      const email = document.querySelector('.email');
-      const password = document.querySelector('.password');
+    const btn = document.querySelector('button');
+    const email = document.querySelector('.email');
+    const password = document.querySelector('.password');
+    
+    btn.addEventListener('click', () => {
+      const object = {
+        email: email.value,
+        pwd: password.value,
+      }
+      // password.addEventListener.oninput = function () {
+      // const offset = password.value.length;
+      // let str = password.value;
+      // let out = '';
+      // for (let i = 0; i < str.length; i++) {
+      //     let code = str.charCodeAt(i);
+      //     code = code + offset;
+      //     out += String.fromCharCode(code);
+      // }
+      // }
+
+      let server = new Server();
+      const result = server.controller(object);
+      console.log(result);
+
+    })
+  }
+}
