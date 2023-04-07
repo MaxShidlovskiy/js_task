@@ -48,3 +48,22 @@ class Server {
       const result = this.repository(object);
       return result;
   }
+
+  repository(object) {
+    const arr = [
+        { "id": 1, "email": "yesenia@mail.ru", "pwd": "pwdffff" },
+        { "id": 2, "email": "hanna@mail.ru", "pwd": "pwdfevcrdv" },
+        { "id": 3, "email": "stanislau@mail.ru", "pwd": "pwdtest" },
+        { "id": 4, "email": "german@mail.ru", "pwd": "pwdqqq" },
+        { "id": 5, "email": "maria@mail.ru", "pwd": "pwdfcel" }
+    ];
+    let filtered = arr.filter((elem) => elem.email === object.email);
+    if (filtered.length > 0) throw new Error('такая почта уже есть');
+    arr.push({ id: arr.length + 1, ...object });
+    return arr;
+}
+
+}
+
+let client = new Client();
+client.doRegistration();
