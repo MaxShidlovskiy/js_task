@@ -12,7 +12,7 @@ class Client {
     const btn = document.querySelector('button');
     const email = document.querySelector('.email');
     const password = document.querySelector('.password');
-    
+
     btn.addEventListener('click', () => {
       const object = {
         email: email.value,
@@ -36,3 +36,15 @@ class Client {
     })
   }
 }
+
+class Server {
+
+  controller(object) {
+      const result = this.service(object);
+      return result;
+  }
+
+  service(object) {
+      const result = this.repository(object);
+      return result;
+  }
