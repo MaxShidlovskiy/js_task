@@ -1,28 +1,23 @@
-// Реализуйте класс Singer, который будет наследовать от класса Worker.
-//  Класс Worker состоит из: свойства Name, свойства surname, метода getFullName(), 
-//  с помощью которого можно вывести одновременно имя и фамилию; 
-//  Класс Singer состоит из свойств years, birth, style и метода getMoreInfo(), 
-//  который выводит информацию о певце: name, surname years, birth, style. 
-//  Необходимо вызвать метод getMoreInfo
-class HTML {
+// Необходимо отобразить кнопку с надписью «Нажми на меня» 
+//  пустой инпут. По клику на кнопку вызвать alert и отобразить 
+//  сообщение из значения инпута
 
-    bindOptionPlus() {
-        let displayTag = document.querySelector('.display');
-        let btnPlusTag = document.querySelector(".plus");
-        btnPlusTag = add.EventListener('click', () => {
-            displayTag.innerHTML = +displayTag.textContent + 1;
-        })
+const inp = document.querySelector(`.inp`);
+const btn = document.querySelector(`.btn`);
+const arrHTML = document.querySelector(`.arr`);
+const uniq = document.querySelector(`.uniq`);
+let arr = [];
+
+btn.addEventListener(`click`, () => {
+    let arruniq = [];
+    arr.push(inp.value);
+    arrHTML.innerHTML = `Massiv ${arr}`;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] != arr[i + 1] && arr[i] != arr[i - 1]) {
+            arruniq.push(arr[i])
+        }
+
     }
-
-    bindOptionMinus() {
-        let displayTag = document.querySelector(".display");
-        let btnMinusTag = document.querySelector(".minus");
-        btnMinusTag = add.EventListener('click', () => {
-            displayTag.innerHTML = +displayTag.textContent - 1;
-        })
-    }
-}
-
-let html = new HTML();
-html.bindOptionPlus();
-html.bindOptionMinus();
+    uniq.innerHTML = `Uniqe : ${arruniq}`;
+})
