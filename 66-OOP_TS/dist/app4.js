@@ -18,7 +18,7 @@ class Student4 {
     }
 }
 const student4 = new Student4();
-student4.setName(`maxim`);
+student4.setName(`Maxim`);
 student4.setAge(30);
 console.log(student4.getName());
 console.log(student4.getAge());

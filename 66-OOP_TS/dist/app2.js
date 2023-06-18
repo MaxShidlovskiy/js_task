@@ -6,5 +6,7 @@ class Student2 {
     age;
 }
 const student2 = new Student2();
+student2.name = `maxim`;
+student2.age = 30;
 console.log(student2.name);
 console.log(student2.age);
