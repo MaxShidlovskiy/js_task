@@ -1,31 +1,54 @@
 // Создайте класс Calculator, который содержит методы add() (сложение), subtract()
 // (вычитание), multiply() (умножение) и divide() (деление). Создайте экземпляр
 // класса Calculator и выполните несколько операций.
-class Calculator {
-    num1;
-    num2;
-    setNum1(num1) {
-        this.num1 = num1;
+// class Calculator {
+//     num1: number;
+//     num2: number;
+//     setNum1(num1: number) {
+//         this.num1 = num1;
+//     }
+//     setNum2(num2: number) {
+//         this.num2 = num2;
+//     }
+//     add() {
+//         return this.num1 + this.num2;
+//     }
+//     subtract() {
+//         return this.num1 - this.num2;
+//     }
+//     multiply() {
+//         return this.num1 * this.num2;
+//     }
+//     divide() {
+//         return this.num1 / this.num2;
+//     }
+// }
+// const calculator6 = new Calculator()
+// calculator6.setNum1(1);
+// calculator6.setNum2(2);
+// console.log(calculator6.add());
+// console.log(calculator6.subtract());
+// console.log(calculator6.multiply());
+// console.log(calculator6.divide());
+class Calculator6 {
+    add(num1, num2) {
+        if (typeof num1 == `number` && typeoff)
+            num2 == ;
+        {
+            return num1 + num2;
+        }
     }
-    setNum2(num2) {
-        this.num2 = num2;
+    subtract(num1, b) {
+        return num1 - num2;
     }
-    add() {
-        return this.num1 + this.num2;
+    multiply(num1, b) {
+        return num1 * num2;
     }
-    subtract() {
-        return this.num1 - this.num2;
-    }
-    multiply() {
-        return this.num1 * this.num2;
-    }
-    divide() {
-        return this.num1 / this.num2;
+    divide(num1, b) {
+        return num1 / num2;
     }
 }
-const calculator6 = new Calculator();
-calculator6.setNum1(1);
-calculator6.setNum2(2);
+const calculator6 = new Calculator6();
 console.log(calculator6.add());
 console.log(calculator6.subtract());
 console.log(calculator6.multiply());

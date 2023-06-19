@@ -37,3 +37,29 @@ console.log(calculator6.multiply());
 console.log(calculator6.divide());
 
 
+// class Calculator6 {
+//     add<Type>(num1: Type, num2: Type): number {
+//         if (typeof num1 == `number` && typeoff num2 ==) {
+//             return num1 + num2;
+//         }
+//     }
+//     subtract<Type>(num1: Type, b: Type): number {
+//         return num1 - num2;
+
+//     }
+//     multiply<Type>(num1: Type, b: Type): number {
+//         return num1 * num2;
+//     }
+//     divide<Type>(num1: Type, b: Type): number {
+//         return num1 / num2;
+//     }
+// }
+
+// const calculator6 = new Calculator6()
+
+
+// console.log(calculator6.add());
+// console.log(calculator6.subtract());
+// console.log(calculator6.multiply());
+// console.log(calculator6.divide());
+
