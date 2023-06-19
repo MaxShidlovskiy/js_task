@@ -1,14 +1,16 @@
-// Создайте класс Student, который содержит свойства name (имя) и age (возраст).
-// Инициализация свойств name, age происходит в конструкторе класса. Создайте
-// несколько экземпляров класса Student и выведите свойства.
-class Student3 {
-    name;
-    age;
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
+// Создайте абстрактный класс Fruit с полем array – массив объектов (id, title, price).
+// Напишите дочерний класс Apple, функцию getAppleInfo, возвращающую
+// информацию о фрукте, где title = яблоко
+class Fruit3 {
+}
+class Apple3 extends Fruit3 {
+    arr = [{ id: 1, title: `apple`, price: 10 }, { id: 2, title: `grusha`, price: 20 }];
+    getAppleInfo() {
+        return this.arr.filter((el) => {
+            if (el.title == `apple`)
+                return el;
+        });
     }
 }
-const student3 = new Student3(`Maxim`, 30);
-console.log(student3.name);
-console.log(student3.age);
+const apple3 = new Apple3();
+console.log(apple3.getAppleInfo());
