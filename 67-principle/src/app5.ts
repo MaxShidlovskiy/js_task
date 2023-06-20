@@ -1,25 +1,36 @@
-// Создайте класс Rectangle, который содержит свойства width (ширина) и height
-// (высота), а также метод getArea(), который возвращает площадь прямоугольника
-// (ширина * высота). Создайте экземпляр класса Rectangle и выведите его площадь.
+// Создайте абстрактный класс "Транспортное средство" (Vehicle), который содержит
+// абстрактные методы "завести" (start) и "остановить" (stop). Реализуйте классынаследники "Автомобиль" (Car) и "Мотоцикл" (Motorcycle), которые расширяют
+// класс "Транспортное средство" и реализуют абстрактные методы в соответствии с
+// особенностями каждого транспортного средства. (седержимое методов:
+// console.log)
 
-class Rectangle5 {
-    width: number;
-    height: number;
-    constructor(width: number, height: number) {
-        this.width = width;
-        this.height = height
+abstract class Vehicle5 {
+   public abstract start(): void;
+   public abstract stop(): void;
+}
+class Car5 extends Vehicle5 {
+    public start(): void {
+        console.log(`c-start`)
     }
-    getArea() {
-        return this.width * this.height;
+    public stop(): void {
+        console.log(`c-stop`)
     }
 }
-const rectangle5 = new Rectangle5(12, 6)
-console.log(rectangle5.getArea());
+class Motorcycle5 extends Vehicle5 {
+    public start(): void {
+        console.log(`m-start`)
+    }
+    public stop(): void {
+        console.log(`m-stop`)
+    }
+}
 
-// class Rectangle5 {
-//     getArea( width: number, height: number) {
-//      return width * height;
-//     }
-// }
-// const rectangle5 = new Rectangle5()
-// console.log(rectangle5.getArea(2,5));
+const car5 = new Car5();
+const motorcycle5 = new Motorcycle5();
+
+
+car5.start();
+car5.stop();
+
+motorcycle5.start();
+motorcycle5.stop();
