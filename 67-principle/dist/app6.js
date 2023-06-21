@@ -1,53 +1,26 @@
-// Создайте класс Calculator, который содержит методы add() (сложение), subtract()
-// (вычитание), multiply() (умножение) и divide() (деление). Создайте экземпляр
-// класса Calculator и выполните несколько операций.
-class Calculator {
-    num1;
-    num2;
-    setNum1(num1) {
-        this.num1 = num1;
+// Создайте класс ArrayAnalyzer, который будет иметь массив чисел как поле класса
+// (хначение инициализируется через конструктор класса), методы getAverage,
+// getMax, getMin для вычисления среднего значения, максимального и
+// минимального элементов массива.
+class ArrayAnalyzer6 {
+    array;
+    constructor(array) {
+        this.array = array;
     }
-    setNum2(num2) {
-        this.num2 = num2;
+    getAvarage() {
+        const result = this.array.reduce((sum, el) => {
+            return sum + el;
+        }, 0);
+        return result / this.array.length;
     }
-    add() {
-        return this.num1 + this.num2;
+    getMax() {
+        return Math.max(...this.array);
     }
-    subtract() {
-        return this.num1 - this.num2;
-    }
-    multiply() {
-        return this.num1 * this.num2;
-    }
-    divide() {
-        return this.num1 / this.num2;
+    getMin() {
+        return Math.min(...this.array);
     }
 }
-const calculator6 = new Calculator();
-calculator6.setNum1(1);
-calculator6.setNum2(2);
-console.log(calculator6.add());
-console.log(calculator6.subtract());
-console.log(calculator6.multiply());
-console.log(calculator6.divide());
-// class Calculator6 {
-//     add<Type>(num1: Type, num2: Type): number {
-//         if (typeof num1 == `number` && typeoff num2 ==) {
-//             return num1 + num2;
-//         }
-//     }
-//     subtract<Type>(num1: Type, b: Type): number {
-//         return num1 - num2;
-//     }
-//     multiply<Type>(num1: Type, b: Type): number {
-//         return num1 * num2;
-//     }
-//     divide<Type>(num1: Type, b: Type): number {
-//         return num1 / num2;
-//     }
-// }
-// const calculator6 = new Calculator6()
-// console.log(calculator6.add());
-// console.log(calculator6.subtract());
-// console.log(calculator6.multiply());
-// console.log(calculator6.divide());
+const arrayAnalyzer6 = new ArrayAnalyzer6([1, 2, 3, 4, 5]);
+console.log(arrayAnalyzer6.getAvarage());
+console.log(arrayAnalyzer6.getMax());
+console.log(arrayAnalyzer6.getMin());
