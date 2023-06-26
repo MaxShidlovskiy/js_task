@@ -58,4 +58,25 @@ function findProduct(arr) {
         return error.message
     }
 }
+
+// 5. У вас есть массив строковых значений, состоящий из номеров телефонов. 
+// Необходимо вывести значения массива без дубликатов. Добавить необходимые
+// проверки.
+// Написать тест для функции
+
+function findArray(arr) {
+    try {
+        if (arr.some(el => typeof el !== 'string')) throw new Error('data error')
+        const newArr = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (!newArr.includes(arr[i])) {
+                newArr.push(arr[i]);
+            }
+        } return newArr;
+    } catch (error) {
+        return error.message
+    }
+}
+
+
 module.exports = { sum, multiply, doArray, findProduct };
