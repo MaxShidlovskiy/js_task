@@ -79,4 +79,5 @@ function findArray(arr) {
 }
 
 
-module.exports = { sum, multiply, doArray, findProduct };
+
+module.exports = { sum, multiply, doArray, findProduct, findArray };
