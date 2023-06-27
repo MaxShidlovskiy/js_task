@@ -1,4 +1,4 @@
-const { sum, multiply, doArray, findProduct, findArray } = require('./app');
+const { sum, multiply, doArray, findProduct,findObject, findArray } = require('./app');
 
 describe(`набор тестов 1`, () => {
     test(`успешно`, () => {
@@ -73,5 +73,12 @@ describe('набор тестов 5', () => {
     test('success', () => {
         const result = findArray(['12345', 23456, 34567, '12345']);
         expect(result).toEqual('data error');
+    });
+});
+
+describe('набор тестов 6', () => {
+    test('', () => {
+        const result = findObject({ 1: 'id', 2: 'name' });
+        expect(result).toBe(2);
     });
 });
