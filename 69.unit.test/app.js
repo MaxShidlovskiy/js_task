@@ -78,6 +78,26 @@ function findArray(arr) {
     }
 }
 
+// 6. На входе статичный объект. Необходимо посчитать количество пар (ключ: 
+//     значение) где значение число и вывести количество. Добавить необходимые
+//     проверки.
+//     Написать тест для функции
+
+function findObject(obj) {
+    try {
+        let count = 0;
+        for (const key in obj) {
+            if (!isNaN(key)) count++;
+        }
+        return count;
+    } catch (error) {
+        return error.message;
+    }
+};
+
+// 7. На входе статичный объект. Необходимо числовые значения удвоить на выходе.
+// Написать тест для функции
 
 
-module.exports = { sum, multiply, doArray, findProduct, findArray };
+
+module.exports = { sum, multiply, doArray, findProduct, findArray, findObject, doubleValue };
