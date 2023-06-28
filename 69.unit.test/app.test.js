@@ -1,4 +1,4 @@
-const { sum, multiply, doArray, findProduct,findObject, findArray, doubleValue } = require('./app');
+const { sum, multiply, doArray, findProduct, findObject, findArray, doubleValue, makeArray } = require('./app');
 
 describe(`набор тестов 1`, () => {
     test(`успешно`, () => {
@@ -83,7 +83,7 @@ describe('набор тестов 6', () => {
     });
 });
 
-describe('doubleValue:', () => {
+describe('набор тестов 7', () => {
     test('', () => {
         const result = doubleValue({ id: 1, name: 2 });
         expect(result).toEqual({ id: 2, name: 4 });
@@ -91,5 +91,17 @@ describe('doubleValue:', () => {
     test('', () => {
         const result = doubleValue({ id: 'qwe', name: 2 });
         expect(result).toEqual({ id: 'qwe', name: 4 });
+    });
+});
+
+describe('набор тестов 8', () => {
+    let obj = { 'key1': 1, 'key2': 2, 'key3': 3, 'key4': 4 };
+    test('success', () => {
+        const result = makeArray(obj);
+        expect(result).toEqual([2, 4]);
+    });
+    test('success', () => {
+        const result = makeArray('null');
+        expect(result).toBe('is not a valid object');
     });
 });
