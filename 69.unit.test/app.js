@@ -109,4 +109,23 @@ function doubleValue(obj) {
     }
 };
 
-module.exports = { sum, multiply, doArray, findProduct, findArray, findObject, doubleValue };
+// 8. На входе статичный объект. Необходимо сформировать массив из всх четных
+// значений объекта.
+// Написать тест для функции
+
+function makeArray(obj) {
+    try {
+        if (typeof obj !== 'object' || typeof obj === 'null') throw new Error('is not a valid object');
+        let arr = []
+        for (let key in obj) {
+            if (typeof obj[key] == 'number' && obj[key] % 2 === 0) {
+                arr.push(obj[key])
+            }
+        }
+        return arr;
+    } catch (err) {
+        return err.message;
+    }
+}
+
+module.exports = { sum, multiply, doArray, findProduct, findArray, findObject, doubleValue,makeArray };
