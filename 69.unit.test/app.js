@@ -98,6 +98,15 @@ function findObject(obj) {
 // 7. На входе статичный объект. Необходимо числовые значения удвоить на выходе.
 // Написать тест для функции
 
-
+function doubleValue(obj) {
+    try {
+        for (const key in obj) {
+            if (!isNaN(obj[key])) obj[key] = obj[key] * 2;
+        }
+        return obj;
+    } catch (error) {
+        return error.message;
+    }
+};
 
 module.exports = { sum, multiply, doArray, findProduct, findArray, findObject, doubleValue };
