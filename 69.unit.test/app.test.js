@@ -1,4 +1,4 @@
-const { sum, multiply, doArray, findProduct,findObject, findArray } = require('./app');
+const { sum, multiply, doArray, findProduct,findObject, findArray, doubleValue } = require('./app');
 
 describe(`набор тестов 1`, () => {
     test(`успешно`, () => {
@@ -80,5 +80,16 @@ describe('набор тестов 6', () => {
     test('', () => {
         const result = findObject({ 1: 'id', 2: 'name' });
         expect(result).toBe(2);
+    });
+});
+
+describe('doubleValue:', () => {
+    test('', () => {
+        const result = doubleValue({ id: 1, name: 2 });
+        expect(result).toEqual({ id: 2, name: 4 });
+    });
+    test('', () => {
+        const result = doubleValue({ id: 'qwe', name: 2 });
+        expect(result).toEqual({ id: 'qwe', name: 4 });
     });
 });
