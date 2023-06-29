@@ -128,4 +128,34 @@ function makeArray(obj) {
     }
 }
 
-module.exports = { sum, multiply, doArray, findProduct, findArray, findObject, doubleValue,makeArray };
+// 9. На входе статичный массив [1, 2, 3, 4, 5, 6] и динамическое значение n. Необходимо 
+// разбить данный одномерный массив на маленькие массивы в зависимости от 
+// того, какого число ввел пользователь. Добавить необходимые проверки.
+// 1 -> [[1], [2], [3], [4], [5], [6]]
+// 2 -> [[1, 2], [3, 4], [5, 6]]
+// 3 -> [[1, 2, 3], [4, 5, 6]]
+// 4 -> [[1, 2, 3, 4], [5, 6]
+// 5 -> [[1, 2, 3, 4, 5], [6]]
+// 6 -> [[1, 2, 3, 4, 5, 6]]
+// Написать тест для функции
+
+function sliceArray(array, n) {
+    try {
+      const newArray = [];
+      for (let i = 0; i < array.length; i += n) {
+        if (!isNaN(n)) {
+          newArray.push(array.slice(i, i + n));
+        } else {
+          continue;
+        }
+      }
+      console.log(`-`, newArray);
+      return newArray;
+    } catch (error) {
+      return error.message;
+    }
+  }
+
+
+  
+module.exports = { sum, multiply, doArray, findProduct, findArray, findObject, doubleValue,makeArray,sliceArray };
