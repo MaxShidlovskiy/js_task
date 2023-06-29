@@ -1,4 +1,4 @@
-const { sum, multiply, doArray, findProduct, findObject, findArray, doubleValue, makeArray } = require('./app');
+const { sliceArray,sum, multiply, doArray, findProduct, findObject, findArray, doubleValue, makeArray } = require('./app');
 
 describe(`набор тестов 1`, () => {
     test(`успешно`, () => {
@@ -105,3 +105,10 @@ describe('набор тестов 8', () => {
         expect(result).toBe('is not a valid object');
     });
 });
+
+describe("набор тестов 9", () => {
+    test("success", () => {
+      const result = sliceArray([1, 2, 3, 4, 5, 6], 2);
+      expect(result).toEqual([[1, 2], [3, 4], [5, 6]]);
+    });
+  });
