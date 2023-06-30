@@ -141,21 +141,44 @@ function makeArray(obj) {
 
 function sliceArray(array, n) {
     try {
-      const newArray = [];
-      for (let i = 0; i < array.length; i += n) {
-        if (!isNaN(n)) {
-          newArray.push(array.slice(i, i + n));
-        } else {
-          continue;
+        const newArray = [];
+        for (let i = 0; i < array.length; i += n) {
+            if (!isNaN(n)) {
+                newArray.push(array.slice(i, i + n));
+            } else {
+                continue;
+            }
         }
-      }
-      console.log(`-`, newArray);
-      return newArray;
+        console.log(`-`, newArray);
+        return newArray;
     } catch (error) {
-      return error.message;
+        return error.message;
     }
-  }
+}
+
+// 10. Реализуйте функцию, которая принимает в качестве параметра строку и
+// возвращает массив без каких-либо элементов с одинаковым значением рядом
+// друг с другом.
+// Написать тест для функции
+// 'AAAABBBCCDAABBB -> ['A', 'B', 'C', 'D', 'A', 'B’]
+// 'ABBCcAD’ -> ['A', 'B', 'C', 'c', 'A', 'D’]
+// '12233’ -> [1, 2, 3]
+// Написать тест для функции
+
+function doArrayNoElem(str) {
+    try {
+        if (typeof str !== "string") throw new Error(`Ошибка типов данных`);
+        const array = [];
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] !== str[i - 1]) {
+                array.push(str[i]);
+            }
+        }
+        return array;
+    } catch (error) {
+        return error.message;
+    }
+}
 
 
-  
-module.exports = { sum, multiply, doArray, findProduct, findArray, findObject, doubleValue,makeArray,sliceArray };
+module.exports = { sum, multiply, doArray, findProduct, findArray, findObject, doubleValue, makeArray, sliceArray,doArrayNoElem };
