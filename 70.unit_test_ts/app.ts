@@ -53,7 +53,7 @@ function capitalizeString(str: any): string {
 // котором могут быть вложенные массивы, и возвращает новый массив, в котором
 // все элементы являются плоским списком без вложенности.
 
-function flattenArray(array: any[]): any[] {
+function flattenArray(array: any): any[] {
     try {
         if (!Array.isArray(array)) throw new Error(`not array`);
         if (!array.length) throw new Error(`empty array`);
@@ -61,6 +61,32 @@ function flattenArray(array: any[]): any[] {
     } catch (error) {
         return error.message
     }
+}
+
+// 8. Создайте класс StringArray, который имеет свойство array (массив строк) и методы:
+// getLongestWord(): string - возвращает самое длинное слово из массива.
+// getUniqueWords(): string[] - возвращает массив уникальных слов из массива.
+class StringArray {
+    getLongestWord(array: any[]) {
+        let checkLength = 0;
+        let word = '';
+        for (let i = 0; i < array.length; i++) {
+            if (array[i].length > checkLength) {
+                checkLength = array[i].length
+                word = array[i]
+            }
+        }
+        return word
+    }
+
+    getUniqueWords(array: any[]) {
+        let noIncludes: any[] = []
+        for (let i = 0; i < array.length; i++) {
+            !noIncludes.includes(array[i]) ? noIncludes.push(array[i]) : null
+        }
+        return noIncludes
+    }
+
 }
 
 // 10. Реализуйте функцию, которая принимает в качестве параметра строку и 
@@ -74,4 +100,4 @@ function flattenArray(array: any[]): any[] {
 
 
 
-export { isPalindrome, calculateFactorial, capitalizeString, flattenArray }
+export { StringArray, isPalindrome, calculateFactorial, capitalizeString, flattenArray }
