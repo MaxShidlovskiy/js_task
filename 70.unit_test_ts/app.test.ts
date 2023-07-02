@@ -1,4 +1,4 @@
-import { StringArray, isPalindrome, calculateFactorial, capitalizeString, flattenArray } from "./app";
+import { NumberArray, StringArray, isPalindrome, calculateFactorial, capitalizeString, flattenArray } from "./app";
 
 describe(`тест 1`, () => {
     test(`Success`, () => {
@@ -66,12 +66,24 @@ describe('тест 4', () => {
 
 })
 
-describe('тест 5', () => {
+describe('тест 8', () => {
     test('success', () => {
         const stringArray = new StringArray()
-        const result1 = stringArray.getLongestWord([`eee`, `ggg`, `lllllllllllll`, `ggg` ]) 
-        const result2 = stringArray.getUniqueWords([`eee`, `ggg`, `lllllllllllll`, `ggg`  ]) 
+        const result1 = stringArray.getLongestWord([`eee`, `ggg`, `lllllllllllll`, `ggg`])
+        const result2 = stringArray.getUniqueWords([`eee`, `ggg`, `lllllllllllll`, `ggg`])
         expect(result1).toBe(`lllllllllllll`)
         expect(result2).toEqual([`eee`, `ggg`, `lllllllllllll`])
-    })  
+    })
+})
+
+describe('тест 9', () => {
+    let numberArray = new NumberArray();
+    test('success', () => {
+        const sum = numberArray.getSum();
+        expect(sum).toBe(152);
+    })
+    test('success', () => {
+        const even = numberArray.getEvenNumbers();
+        expect(even).toEqual([10, 20, 30]);
+    })
 })
