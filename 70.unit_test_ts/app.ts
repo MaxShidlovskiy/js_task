@@ -89,6 +89,23 @@ class StringArray {
 
 }
 
+// 9. Создайте класс NumberArray, который имеет свойство array (массив чисел) и
+// методы:
+// getSum(): number - возвращает сумму всех чисел в массиве.
+// getEvenNumbers(): number[] - возвращает массив только четных чисел из массива.
+
+class NumberArray {
+    array: number[] = [10, 20, 30, 41, 51]
+    getSum(): number {
+        return this.array.reduce((acc: number, next: number) => acc + next, 0);
+    }
+    getEvenNumbers(): number[] {
+        let filtered: number[] = []
+        filtered = this.array.filter((el: number) => el % 2 == 0);
+        return filtered;
+    }
+}
+
 // 10. Реализуйте функцию, которая принимает в качестве параметра строку и 
 // возвращает массив без каких-либо элементов с одинаковым значением рядом 
 // друг с другом.
@@ -100,4 +117,4 @@ class StringArray {
 
 
 
-export { StringArray, isPalindrome, calculateFactorial, capitalizeString, flattenArray }
+export {NumberArray, StringArray, isPalindrome, calculateFactorial, capitalizeString, flattenArray }
