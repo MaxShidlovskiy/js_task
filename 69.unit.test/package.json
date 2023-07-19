@@ -1,0 +1,14 @@
+{
+  "name": "69.unit.test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "jest": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.6.1"
+  }
+}
